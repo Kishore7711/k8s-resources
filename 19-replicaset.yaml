@@ -1,0 +1,25 @@
+apiVersion: api/v1
+kind: ReplicaSet
+metadata:
+  name: nginx
+  # this are replica set labels
+  labels:
+    purpose: rs-demo
+    project: roboshop
+spec:
+  replicas: 3
+  selector:
+  # these labels are used to select pods
+    mastchLabels:
+      purpose: rs-demo
+      project: roboshop
+  template:
+    metadata:
+    # these labels are pod defination 
+      labels:
+        purpose: rs-demo
+        project: roboshop
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
