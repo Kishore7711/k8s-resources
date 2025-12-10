@@ -10,7 +10,7 @@ spec:
   replicas: 3
   selector:
   # these labels are used to select pods
-    mastchLabels:
+    matchLabels:
       purpose: rs-demo
       project: roboshop
   template:
