@@ -6,6 +6,6 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    envFrom:                # this section is used to reference from the ConfigMap
+    envFrom:                # this section is used to reference from the ConfigMap ( non-secrets data )
     - configMapRef:
         name: pod-config
